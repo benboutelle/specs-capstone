@@ -5,10 +5,16 @@ import AddBird from "./AddBird";
 const DetailsDisplay = (props) => {
   const [birdDetails, setBirdDetails] = useState({});
   const [showDetails, setShowDetails] = useState(false);
+  const [date, setDate]= useState('')
   const getBirdDetails = useCallback(() => {
     axios
       .get(`/api/details/${props.bird.id}`)
-      .then((res) => setBirdDetails(res.data[0]))
+      .then((res) => {
+        setBirdDetails(res.data[0])
+        const timeStamp = Date.parse(res.data[0].date)
+        const stringDate = new Date(timeStamp)
+        setDate(stringDate.toDateString())
+      })
       .catch((err) => console.log(err));
     console.log(props.bird.birdId);
   }, [props.bird.id]);
@@ -32,11 +38,11 @@ const DetailsDisplay = (props) => {
         <div className="grid grid-cols-4">
           <div className=" ring-1 ring-gray-100">
             <label>Date seen</label>
-            <h4>{birdDetails.date}</h4>
+            <h4>{date}</h4>
           </div>
           <div className=" ring-1 ring-gray-100">
             <label>time</label>
-            <h4>{birdDetails.time}</h4>
+            <h4>{new Date('1970-01-01T' + birdDetails.time + 'Z').toLocaleTimeString('en-US',{timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'})}</h4>
           </div>
           <div className=" ring-1 ring-gray-100">
             <label>Location</label>
