@@ -56,7 +56,7 @@ const DetailsDisplay = (props) => {
       )}
       <br />
       <button
-        className=" ring-1 ring-gray-100 bg-blue-200 rounded-md hover:bg-blue-300 "
+        className=" ring-1 ring-gray-100 text-black bg-gray-100 rounded-md hover:bg-gray-300 "
         onClick={handleClick}
       >
         {showDetails ? "Hide Details" : "View Details"}

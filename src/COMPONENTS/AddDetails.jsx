@@ -29,14 +29,14 @@ const AddDetails = (props) => {
   };
 
   return (
-    <div className="bg-blue-200 ">
-      <h3 className="">Fill out some information about the
-        <div className=" font-semibold italic underline">{props.birdName}</div>
+    <div className="bg-cover bg-[url(C:\Users\benny\OneDrive\Pictures\nature.jpg)] w-full h-screen ">
+      <h3 className="bg-blue-200">Fill out some information about the
+        <div className=" text-lg font-semibold italic underline">{props.birdName}</div>
       </h3>
         <br/> 
       <form className="flex flex-col  " onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label className=" ">Date</label>
+          <label className="font-bold text-white bg-black/50 rounded-xl ">Date</label>
           <br/>
           <input
             className=" rounded-md shadow-lg"
@@ -45,7 +45,7 @@ const AddDetails = (props) => {
         </div>
         <br/>
         <div>
-          <label className="">Time</label>
+          <label className="  font-bold text-white bg-black/50 rounded-md">Time</label>
           <br/>
           <input
             className=" rounded-md shadow-lg"
@@ -54,7 +54,7 @@ const AddDetails = (props) => {
         </div>
         <br/>
         <div >
-          <label className=" ">General Area</label>
+          <label className="font-bold text-white bg-black/50 rounded-lg">General Area</label>
           <br/>
           <input
             className="rounded-md shadow-lg"
@@ -63,13 +63,14 @@ const AddDetails = (props) => {
         </div>
         <br/>
         <div >
-          <label className="flex flex-col">Add extra notes if needed</label>
+          <label className=" font-bold text-white bg-black/50 rounded-lg">Add extra notes if needed</label>
+          <br/>
           <textarea
             className="resize rounded-md shadow-lg"
             placeholder="Notes"
             onChange={(e) => setNotes(e.target.value)}/>
         </div>
-        <button className=" hover:underline">Submit</button>
+        <button className=" hover:underline font-bold text-white">Submit</button>
       </form>
     </div>
   );

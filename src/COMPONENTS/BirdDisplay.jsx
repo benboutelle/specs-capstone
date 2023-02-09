@@ -23,10 +23,14 @@ const BirdDisplay = (props) => {
   });
 
   return mappedBirds.length >= 1 ? (
-    <main className=" bg-blue-200">
-      <h2 className=" font-semibold text-xl">Your Bird History</h2>
-      <div className=" ">{mappedBirds}</div>
+    <div className=" bg-cover bg-[url(C:\Users\benny\OneDrive\Pictures\nature.jpg)] w-full h-screen" >
+
+    <main className=" ">
+      <h2 className=" bg-blue-200 font-semibold text-xl">Your Bird History</h2>
+      <div className=" text-white bg-black/50 rounded-lg ">{mappedBirds}</div>
     </main>
+
+    </div>
   ) : (
     <main className=" bg-blue-200">
       <h1 className="font-semibold text-xl">No Birds yet!</h1>
